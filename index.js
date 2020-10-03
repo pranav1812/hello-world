@@ -123,7 +123,9 @@ client.on("message", async (message) => {
 
 		case "clear":
 		case "c":
-            //TODO: Clear array server.queue !
+			// Clearing Queue !
+           	while (server.queue.length > 1)
+				server.queue.pop();
 			break;
 
 		case "r":
