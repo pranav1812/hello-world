@@ -126,10 +126,15 @@ client.on("message", async (message) => {
 			// Clearing Queue !
            	while (server.queue.length > 1)
 				server.queue.pop();
+			message.channel.send("Cleared !");
 			break;
 
 		case "r":
 		case "remove":
+			if(args[0] != 1) {
+				server.queue.splice(args[0]-1,1);
+				message.channel.send("Removed !")
+			}
 			break;
 	}
 });
